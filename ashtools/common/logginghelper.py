@@ -3,10 +3,10 @@ from ashtools.common import *
 
 # Define color dictionary based on logging levels
 LOG_COLORS = {
-    logging.DEBUG: YELLOW.ascii,
-    logging.INFO: BRIGHT_GREEN.ascii,
+    logging.DEBUG: WHITE_BOLD.ascii,
+    logging.INFO: RESET.ascii,
     logging.WARN: ORANGE.ascii,
-    logging.ERROR: BRIGHT_RED.ascii,
+    logging.ERROR: BRIGHT_RED_BOLD.ascii,
     logging.CRITICAL: RED_BOLD.ascii,
     "RESET": RESET.ascii,
 }
@@ -53,6 +53,6 @@ def error_log(message):
     _app_logger.error(message)
 
 
-info_log(
+debug_log(
     f"{GREEN_BOLD_ITALIC.ascii}logginghelper loaded. logging INFO by default. Change this at any point in time by calling change_log_level(whatever_level)."
 )
